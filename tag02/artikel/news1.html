@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        /* Responsive Bilder */
+        img {max-width: 100%; height: auto;}
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Microsoft Defender: Der Erkennung mit Komma entgehen</h1>
+        <p>Ein IT-Forscher hat entdeckt, dass sich die Erkennung des Microsoft Defenders mit einem Komma austricksen lässt.</p>
+        <p>Lesezeit: 2 Minuten</p>
+        <figure>
+            <img src="./img/Bing_Image_Creator-A_Monster_is_scratching_its_head_while_looking_at_a_laptop_on_a_wooden_desk.webp" alt="" width="320" height="240">
+            <figcaption>(Bild: Erstellt mit Bing Image Creator durch heise online)</figcaption>
+        </figure>
+        
+       
+        <p>12.02.2024 12:59 Uhr | Security</p>
+        <p>Von Dirk Knop</p>
+        <p>Im Microsoft Defender steckt eine Schutzkomponente, die Ausführung von Schadcode mithilfe von rundll32.exe erkennen und unterbinden soll. Dieser Mechanismus lässt sich derzeit leicht austricksen, hat ein IT-Forscher in der vergangenen Woche mitgeteilt.</p>
+        <p>In einer Sicherheitsmitteilung erläutert John Page, dass er bereits 2022 gezeigt hatte, dass sich der Schutz vor Ausführung von Malware durch Start mit rundll32.exe umgehen ließ. Er zeigt, wie sich Malware von externer Quelle einschleusen lässt, indem bei der Referenzierung von mshtml beim Aufruf von rundll32.exe eine sogenannte Path Traversal missbraucht wird, im konkreten Fall ein zusätzliches "..\".</p>
+        <h2>Microsoft Defender: Alte Umgehung mit neuem Trick</h2>
+        <p>Im Beispiel wurde aus rundll32.exe javascript:"\..\..\mshtml,RunHTMLApplication ";alert(1), was mit einer Fehlermeldung und Warnung durch Windows Defender quittiert wird, einfach rundll32.exe javascript:"\..\..\..\mshtml,RunHTMLApplication ";alert(666), was an der administrativen Kommandozeile ausgeführt wurde. Anstatt einer Anzeige eines alert lässt sich mit der Javascript-Anweisung GetObject Schadcode von externer Quelle herunterladen.</p>
+        <figure>
+            <img src="./img/2024-02-12-Microsoft_Defender_blockt_alten_Pathtraversal_Angriff.webp" alt="" width="320" height="240">
+            <figcaption>Die alte Angriffsvariante aus 2022 blockiert Microsoft Defender inzwischen. (Bild: Screenshot / dmk)</figcaption>
+        </figure>
+        
+        <p>Die Sicherheitslücke wurde vom CERT-Bund des BSI als mittelschwer eingestuft, mit einer vorläufigen CVSS-Bewertung von 5.3. Dennoch ermöglicht solch eine Lücke Angreifern, sich etwa im System einzunisten oder weiter auszubreiten. Die Antwort auf eine Anfrage, ob Microsoft bereits Kenntnis von der Schwachstelle hat, an einer Fehlerkorrektur arbeitet und wann die zu erwarten ist, steht derzeit noch aus.</p>
+        <p>Microsoft rüstet die Defender-Anti-Malware mit immer weiteren Schutzmechanismen aus. Ende vergangenen Jahres kam etwa die Unterstützung durch Künstliche Intelligenz hinzu, die menschengesteuerte Angriffe wie Ransomware-Attacken automatisch erkennen und blockieren können soll.</p>
+        <p>(dmk)</p>
+    </article>
+</body>
+</html>
